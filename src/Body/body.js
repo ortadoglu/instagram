@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Route, Switch} from 'react-router-dom';
 import LoginPage from '../LoginPage/login.js';
-import GaleryPage from '../GaleryPage/galery.js';
+import GalleryPage from '../GalleryPage/galleryPage.js';
 
-class Body extends Component {
+class Body extends React.Component {
   render() {
     return (
         <Switch>
@@ -11,7 +11,7 @@ class Body extends Component {
                 <LoginPage/>
             </Route>
             <Route path="/galery">
-                <GaleryPage/>
+                <GalleryPage/>
             </Route>
         </Switch>
     );
