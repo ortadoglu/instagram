@@ -6,7 +6,7 @@ import MainBody from './Body/body.js';
 class App extends Component {
   render() {
     return (
-        <div>
+        <div className="MainWindow">
             <Header />
             <MainBody />
         </div>

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import FramedPic from './framedPic.js';
-
+import PolaroidPic from '../KewlPic/polaroidPic.js';
 import Details from './details.js';
 
 const player =    {
@@ -35,7 +34,7 @@ class EditPicturePage extends React.Component {
         
         return (
             <div className="PictureFrame">
-                <FramedPic src={player.src} description={player.description} />
+                <PolaroidPic src={player.src} description={player.description} />
                 <Details details={player} />
                 <Link to="/galery">Back</Link>
             </div>

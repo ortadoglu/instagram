@@ -1,25 +1,29 @@
-.FramedPic {
-    margin: 5px;
-    border: 1px solid #ccc;
-    float: left;
-    width: 280px;
-    height: 280px;
-
-}
-
-.FramedPic:hover {
-    border: 1px solid #777;
-}
-
-.FramedPic img {
+.GalleryPage {
     width: 100%;
-    height: 90%;
-    -ms-transform: rotate(3deg); /* IE 9 */
-    -webkit-transform: rotate(3deg); /* Chrome, Safari, Opera */
-    transform: rotate(3deg);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
-.FramedPic  {
-    padding: 15px;
-    text-align: center;
+.Gallery {
+    flex-grow:2;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: auto;
+    width: 100%;
+    background-color: #D1F1C5;
+}
+
+.GalleryBar {
+    height: 50px;
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    background-color: lightblue;
+}
+
+.images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }

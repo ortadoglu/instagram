@@ -1,6 +1,7 @@
 import React from 'react';
+import './polaroidPic.css';
 
-class FramedPic extends React.Component {
+class PolaroidPic extends React.Component {
     constructor (){
         super();
         this.state = {loading: true};
@@ -12,21 +13,22 @@ class FramedPic extends React.Component {
           return null;
         }
         return (
-            <div className="spinner">sometes
+            <div className="spinner">
                 <span className="spinner" />
             </div>
         );
       }
 
     render() {
-        
         return (
-            <div className="FramedPic">
-                <img src={this.props.src} alt="poza" />
-                <div class="desc">{this.props.description}</div>
-            </div>
+            <div className="polaroid">
+                <div className="innerPolaroid">
+                    <p>{this.props.description}</p>
+                    <img src={this.props.src} alt={this.props.description} />
+                </div>
+          </div>
         );
     }
 }
 
-export default FramedPic;
+export default PolaroidPic;

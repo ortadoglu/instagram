@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import AppBar from 'material-ui/AppBar';
 import IconButton from 'material-ui/IconButton';
 import ActionHome from 'material-ui/svg-icons/action/home';
@@ -21,7 +20,7 @@ class Header extends React.Component {
     handleClose = () => this.setState({open: false});
 
     render() {
-        return (<div>
+        return (<div className="Header">
             <AppBar
               title={<span >Not Instagram yet</span>}
               iconElementLeft={<IconButton><ActionHome /></IconButton>}
