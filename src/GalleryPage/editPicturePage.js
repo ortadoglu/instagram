@@ -1,12 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import FramedPic from './framedPic.js';
+
+import Details from './details.js';
 
 const player =    {
     id: 1,
     tag: "branza",
     description: "despre branza",
-    date: "",
-    location: "",
+    date: "sss",
+    location: "sss",
     src: "https://cdn.thinglink.me/api/image/860951843818176512/1240/10/scaletowidth"
 }
 
@@ -32,7 +35,8 @@ class EditPicturePage extends React.Component {
         
         return (
             <div className="PictureFrame">
-                <img src={player.src} alt="poza" />
+                <FramedPic src={player.src} description={player.description} />
+                <Details details={player} />
                 <Link to="/galery">Back</Link>
             </div>
         );

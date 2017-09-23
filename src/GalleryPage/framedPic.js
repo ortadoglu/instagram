@@ -1,7 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
 
-class Picture extends React.Component {
+class FramedPic extends React.Component {
     constructor (){
         super();
         this.state = {loading: true};
@@ -20,15 +19,14 @@ class Picture extends React.Component {
       }
 
     render() {
+        
         return (
-            <div className="PictureFrame" >
-                {this.renderSpinner()}
-                <Link to={`/galery/${this.props.imageId}`}>
-                    <img src={this.props.imageUrl} alt="poza" />
-                </Link>
+            <div className="FramedPic">
+                <img src={this.props.src} alt="poza" />
+                <div class="desc">{this.props.description}</div>
             </div>
         );
     }
 }
 
-export default Picture;
+export default FramedPic;
