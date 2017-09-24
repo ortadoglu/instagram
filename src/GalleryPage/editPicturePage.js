@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import PolaroidPic from '../KewlPic/polaroidPic.js';
+import PolaroidPic from './KewlPic/polaroidPic.js';
 import Details from './details.js';
+import mockupAPI from './mockupAPI.js';
 
 const player =    {
     id: 1,
@@ -17,6 +18,7 @@ class EditPicturePage extends React.Component {
         super();
         this.state = {loading: true};
     }
+
 
     renderSpinner() {
         if (!this.state.loading) {
@@ -35,7 +37,7 @@ class EditPicturePage extends React.Component {
         return (
             <div className="PictureFrame">
                 <PolaroidPic src={player.src} description={player.description} />
-                <Details details={player} />
+                <Details details={mockupAPI.get(2)} />
                 <Link to="/galery">Back</Link>
             </div>
         );

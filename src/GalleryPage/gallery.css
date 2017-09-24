@@ -7,11 +7,11 @@
 
 .Gallery {
     flex-grow:2;
-    overflow-y: auto;
+    overflow-y: scroll;
     overflow-x: hidden;
-    height: auto;
+
     width: 100%;
-    background-color: #D1F1C5;
+    background-color: #E8EEE6;
 }
 
 .GalleryBar {
@@ -20,6 +20,8 @@
     position: absolute;
     bottom: 0px;
     background-color: lightblue;
+    display:flex;
+    justify-content: space-around;
 }
 
 .images {

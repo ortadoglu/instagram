@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import IconButton from 'material-ui/IconButton';
 import CircleIcon from 'material-ui/svg-icons/content/add-circle-outline';
 import FilterIcon from 'material-ui/svg-icons/content/filter-list';
-import PolaroidPic from '../KewlPic/polaroidPic.js'
+import PolaroidPic from './KewlPic/polaroidPic.js'
 
 class Gallery extends React.Component {
     render() {
@@ -21,9 +21,8 @@ class Gallery extends React.Component {
                     </div>
                 </div>  
                 <div className="GalleryBar">
-                    <IconButton><CircleIcon /></IconButton>
-                    <IconButton><FilterIcon /></IconButton>
-                    
+                    <IconButton tooltip="Add another picture"><CircleIcon /></IconButton>
+                    <IconButton tooltip="Use some Filters"><FilterIcon /></IconButton>             
                 </div>
             </div>      
         );

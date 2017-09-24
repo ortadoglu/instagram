@@ -1,11 +1,11 @@
 import React from 'react';
 import Gallery from './gallery.js';
-import mockup from './mockup.js';
+import mockup from './mockupAPI.js';
 import { Switch , Route } from 'react-router-dom'
 import EditPicturePage from './editPicturePage.js';
 import './gallery.css';
 
-let test = mockup;
+let test = mockup.all();
 
 class GalleryPage extends React.Component {
     render() {

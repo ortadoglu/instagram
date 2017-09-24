@@ -20,6 +20,7 @@
     font: 400 18px/1 'Kaushan Script', cursive;
     color: #888;
     z-index: 10;
+    pointer-events: none;
 }
 
 .polaroid :hover {
