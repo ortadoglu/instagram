@@ -1,5 +1,5 @@
 import React from 'react';
-import './polaroidPic.css';
+import './componentCSS/polaroidPic.css';
 
 class PolaroidPic extends React.Component {
     constructor (){
