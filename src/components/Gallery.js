@@ -8,10 +8,7 @@ import PolaroidPic from './polaroidPic.js'
 
 import Drawer from 'material-ui/Drawer';
 import AddImage from '../containers/AddImage';
-
-import MenuItem from 'material-ui/MenuItem';
-import ContentFilter from 'material-ui/svg-icons/content/filter-list';
-import IconMenu from 'material-ui/IconMenu';
+import TagList from '../containers/Tags';
 
 
 class Gallery extends React.Component {
@@ -44,17 +41,7 @@ class Gallery extends React.Component {
                 </div>  
                 <div className="GalleryBar">
                     <IconButton tooltip="Add another picture" tooltipPosition="top-center" onClick={this.handleToggle}><CircleIcon /></IconButton>
-                    <IconMenu 
-                        iconButtonElement={<IconButton><ContentFilter /></IconButton>}
-                        onChange={this.handleChangeSingle}
-                        value={this.state.valueSingle}
-                        multiple={false}
-                        >
-                        <MenuItem value="1" primaryText="michel" />
-                        <MenuItem value="2" primaryText="branza" />
-                        <MenuItem value="3" primaryText="buildings" />
-                        <MenuItem value="4" primaryText="No filter" />
-                    </IconMenu>         
+                    <TagList />      
                 </div>
                 <Drawer className="AddImageDrawer" open={this.state.open} closeFunction={() => this.handleToggle()}>
                     <AddImage />
