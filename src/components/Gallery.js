@@ -8,25 +8,35 @@ import ClearIcon from 'material-ui/svg-icons/content/clear';
 import PolaroidPic from './polaroidPic.js'
 import './componentCSS/gallery.css';
 import Drawer from 'material-ui/Drawer';
-import MenuItem from 'material-ui/MenuItem';
 import AddImage from '../containers/AddImage';
+
+import MenuItem from 'material-ui/MenuItem';
+import ContentFilter from 'material-ui/svg-icons/content/filter-list';
+import IconMenu from 'material-ui/IconMenu';
+
 
 class Gallery extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {open: false};
+        this.state = {open: false, valueSingle: '4'};
     }
-    
+
     disclaimerText= "Due to some limitations of this component you can only add a link to the image you want to load. Drag and drop funtionality is on the way. Thanks for understanding";
+
+    handleChangeSingle = (event, value) => {
+        this.setState({
+            valueSingle: value,
+        });
+    };
 
     
     handleToggle = () => this.setState({open: !this.state.open});
 
     
-
+    // 
     render() {
         return (
-            <div className="Gallerypage">
+            <div className="GalleryPage">
                 <div className="Gallery">
                     {this.props.imageUrls.map(details => 
                         <PolaroidPic src={details.src} description={details.description} />
@@ -35,7 +45,17 @@ class Gallery extends React.Component {
                 </div>  
                 <div className="GalleryBar">
                     <IconButton tooltip="Add another picture" tooltipPosition="top-center" onClick={this.handleToggle}><CircleIcon /></IconButton>
-                    <IconButton tooltip="Use some Filters" tooltipPosition="top-center"><FilterIcon /></IconButton>             
+                    <IconMenu 
+                        iconButtonElement={<IconButton><ContentFilter /></IconButton>}
+                        onChange={this.handleChangeSingle}
+                        value={this.state.valueSingle}
+                        multiple={false}
+                        >
+                        <MenuItem value="1" primaryText="michel" />
+                        <MenuItem value="2" primaryText="branza" />
+                        <MenuItem value="3" primaryText="buildings" />
+                        <MenuItem value="4" primaryText="No filter" />
+                    </IconMenu>         
                 </div>
                 <Drawer className="AddImageDrawer" open={this.state.open} closeFunction={() => this.handleToggle()}>
                     <AddImage />

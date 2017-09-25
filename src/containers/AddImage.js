@@ -24,11 +24,11 @@ let AddImage = ({ dispatch }) => {
         <TextField className="InputField" onChange={(e) => {description = e.target.value}}
             floatingLabelText="Description"  required />
         <DatePicker className="InputField" maxDate={maxDate} onChange={(e, data) => {date = data}} 
-            floatingLabelText="Date"/>
+            floatingLabelText="Date" required />
         <TextField className="InputField" onChange={(e) => {location = e.target.value}}
-            floatingLabelText="Location" />     
+            floatingLabelText="Location" required />     
         <TextField  className="InputField" onChange={(e) => {src = e.target.value}}
-            floatingLabelText="Image URL" />               
+            floatingLabelText="Image URL" required />               
         <RaisedButton className="FormSubmitButton" type="submit" label="Add Image" icon={<CircleIcon  />} /> 
 
       </form>

@@ -2,22 +2,18 @@ import { connect } from 'react-redux'
 import { toggleTodo } from '../actions'
 import Gallery from '../components/Gallery'
 
-const getVisibleTodos = (todos, filter) => {
+const getVisibleImages = (images, filter) => {
   switch (filter) {
     case 'SHOW_ALL':
-      return todos
-    case 'SHOW_FILTERED':
-      return todos.filter(t => t.tag == filter)
-    case 'SHOW_ACTIVE':
-      return todos.filter(t => t.Id == "");
+      return images
     default :
-      return todos.filter(t => t.tag == filter)
+      return images.filter(t => t.tag == filter)
   }
 }
 
 const mapStateToProps = state => {
   return {
-    imageUrls: getVisibleTodos(state.images, "SHOW_ALL") // add real filter
+    imageUrls: getVisibleImages(state.images, state.visibilityFilter) // add real filter
   }
 }
 

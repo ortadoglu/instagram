@@ -59,7 +59,7 @@ const  preloads =[
 
         {
             id: 5,
-            tag: "branza",
+            tag: "buildings",
             description: "paris",
             date: "",
             location: "Bratislava",
@@ -158,7 +158,7 @@ const  preloads =[
 
         {
             id: 16,
-            tag: "branza",
+            tag: "buildings",
             description: "valuri",
             date: "",
             location: "",
