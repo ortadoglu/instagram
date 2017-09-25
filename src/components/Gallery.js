@@ -3,10 +3,9 @@ import PropTypes from 'prop-types';
 import IconButton from 'material-ui/IconButton';
 import CircleIcon from 'material-ui/svg-icons/content/add-circle-outline';
 import InfoIcon from 'material-ui/svg-icons/action/info-outline';
-import FilterIcon from 'material-ui/svg-icons/content/filter-list';
 import ClearIcon from 'material-ui/svg-icons/content/clear';
 import PolaroidPic from './polaroidPic.js'
-import './componentCSS/gallery.css';
+
 import Drawer from 'material-ui/Drawer';
 import AddImage from '../containers/AddImage';
 
