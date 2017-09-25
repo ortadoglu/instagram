@@ -10,7 +10,7 @@
     overflow-y: scroll;
     overflow-x: hidden;
 
-    width: 100%;
+    width: inherit;
     background-color: #E8EEE6;
 }
 
@@ -28,4 +28,28 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+.AddImageForm {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    
+}
+
+.AddImageForm .FieldDescription {
+
+    padding:10px;
+    padding-top: 15px;
+    font: 400 18px/1 'Kaushan Script', cursive;  
+}
+
+
+.AddImageForm input {
+        margin-left:14px;
+        font: 400 16px/1 'Kaushan Script', cursive;     
+}
+
+.AddImageForm input:last-of-type {
+    margin-bottom:40px; 
 }
