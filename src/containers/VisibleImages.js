@@ -7,7 +7,7 @@ const getVisibleImages = (images, filter) => {
     case 'SHOW_ALL':
       return images
     default :
-      return images.filter(t => t.tag == filter)
+      return images.filter(t => t.tag === filter)
   }
 }
 
