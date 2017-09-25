@@ -8,11 +8,16 @@ import Header from './Header';
 
 const App = () => (
     <div>
-        <AddTodo />
-        <VisibleTodoList />
-        <Footer />
         <VisibleImages />
     </div>
 )
 
 export default App
+
+/*
+    <div>
+        <AddTodo />
+        <VisibleTodoList />
+        <Footer />
+        <VisibleImages />
+    </div>*/

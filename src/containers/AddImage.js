@@ -5,35 +5,31 @@ import IconButton from 'material-ui/IconButton';
 import CircleIcon from 'material-ui/svg-icons/content/add-circle-outline';
 import RaisedButton from 'material-ui/RaisedButton';
 import DatePicker from 'material-ui/DatePicker';
+import TextField from 'material-ui/TextField';
 
 let AddImage = ({ dispatch }) => {
   let tag, description, date, location, src;
+  let maxDate = new Date();
 
   return (
     <div className="AddImageForm">
       <form
         onSubmit={e => {
           e.preventDefault()
-          if (!tag.value.trim() || !description.value.trim() || !date.value.trim() || !location.value.trim() || !src.value.trim()) {
-            return
-          }
-          dispatch(addImage(tag.value, description.value,  date.value, location.value, location.value))
-            tag.value = ''; description.value="";
+          dispatch(addImage(tag, src, date, location, src))
         }}
       >
-        <div className = "FieldDescription">Tag</div>
-        <input ref={node => {tag = node}}/>
-        <div className = "FieldDescription">Description</div>
-        <input ref={node => {description = node}}/>
-        <div className = "FieldDescription">Date</div>
-        <DatePicker ref={node => {date = node}} hintText="Portrait Dialog" />
-        <div className = "FieldDescription">Location</div>
-        <input ref={node => {location = node}}/>
-        <div className = "FieldDescription">Image URL</div>
-        <input ref={node => {src = node}}/>
-
-
-        <RaisedButton type="submit" label="Add Image" icon={<CircleIcon  />} />
+        <TextField className="InputField" onChange={(e) => {tag = e.target.value}}
+            floatingLabelText="Tag" required />        
+        <TextField className="InputField" onChange={(e) => {description = e.target.value}}
+            floatingLabelText="Description"  required />
+        <DatePicker className="InputField" maxDate={maxDate} onChange={(e, data) => {date = data}} 
+            floatingLabelText="Date"/>
+        <TextField className="InputField" onChange={(e) => {location = e.target.value}}
+            floatingLabelText="Location" />     
+        <TextField  className="InputField" onChange={(e) => {src = e.target.value}}
+            floatingLabelText="Image URL" />               
+        <RaisedButton className="FormSubmitButton" type="submit" label="Add Image" icon={<CircleIcon  />} /> 
 
       </form>
     </div>
