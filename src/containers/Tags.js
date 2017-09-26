@@ -7,7 +7,7 @@ const getTags = (images) => {
     images.filter(t => { 
         if ( a.indexOf(t.tag) === -1) a.push(t.tag); 
     });
-    return a;
+    return a; //refactor to use reselect
 }
 
 const mapStateToProps = state => {

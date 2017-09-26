@@ -36,7 +36,7 @@ const  preloads =[
             description: "earth picture",
             date: "",
             location: "Bratislava",
-            src: "https://cdn.thinglink.me/api/image/860951843818176512/1240/10/scaletowidth",
+            src: "https://www.w3schools.com/w3images/fjords.jpg",
             selected: false,
             comments: [],
             rating: 5,
@@ -96,7 +96,7 @@ const  preloads =[
             description: "pamant",
             date: "",
             location: "Bratislava",
-            src: "https://cdn.thinglink.me/api/image/860951843818176512/1240/10/scaletowidth",
+            src: "https://www.w3schools.com/w3images/fjords.jpg",
             selected: false,
             comments: [],
             rating: 5,
@@ -212,7 +212,7 @@ const  preloads =[
 
         {
             id: 16,
-            tag: "buildings",
+            tag: "earth",
             description: "valuri",
             date: "",
             location: "",
