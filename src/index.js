@@ -8,7 +8,23 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import './index.css'
 import { localeReducer as locale } from 'react-localize-redux';
 
-let store = createStore(galleryApp)
+import { initialize, addTranslation } from 'react-localize-redux';
+
+
+
+let store = createStore(galleryApp);
+// To set a different default active language set the defaultLanguage option.
+const languages = ['en', 'de', 'ro'];
+store.dispatch(initialize(languages, { defaultLanguage: 'en' }));
+
+
+const json = {
+    "title": ["Movie Reviews"],
+    "search": ["<a href='http://www.imdb.com/'>Search IMDb</a>"],
+    "copyright": ["Movie Copyright"],
+  };
+store.dispatch(addTranslation(json));
+
 
 render(
     <Provider store={store}>
