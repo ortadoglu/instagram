@@ -1,4 +1,4 @@
-let nextTodoId = 100
+let nextId = 100;
 
 export const setVisibilityFilter = filter => {
   return {
@@ -24,7 +24,7 @@ export const setImageFilter = filter => {
 export const addImage = (tag, description, date, location, src, selected, comments, rating ) => {
   return {
     type: 'ADD_IMAGE',
-    id: nextTodoId++,
+    id: nextId++,
     tag,
     description,
     date,

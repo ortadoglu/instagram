@@ -6,10 +6,8 @@ import galleryApp from './reducers';
 import App from './components/App';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import './index.css'
-import { localeReducer as locale } from 'react-localize-redux';
 
 import { initialize, addTranslation } from 'react-localize-redux';
-
 
 
 let store = createStore(galleryApp);
@@ -17,12 +15,18 @@ let store = createStore(galleryApp);
 const languages = ['en', 'de', 'ro'];
 store.dispatch(initialize(languages, { defaultLanguage: 'en' }));
 
-
 const json = {
-    "title": ["Movie Reviews"],
-    "search": ["<a href='http://www.imdb.com/'>Search IMDb</a>"],
-    "copyright": ["Movie Copyright"],
+    "tag": ["Tag","Der Tag","Tag-ul"],
+    "description": ["Description","Beschreibung", "Descrierea"],
+    "location": ["Location", "Standort", "Locatie"],
+    "date": ["Date", "Datum", "Data"],  
+    "Image Url": ["Image URL", "Bild Url", "Url imagine"],
+    "add image": ["ADD IMAGE", "HINZUFÜGEN", "ADAUGA"],
+    "DISCLAIMER": ["This tab doesnt close so you cand watch language switching",
+        "Diese Registerkarte schließt nicht so, dass Sie die Sprache wechseln",
+        "Fereasta nu se inchide pentru a putea vedea schimbarea limbii"],
   };
+  
 store.dispatch(addTranslation(json));
 
 

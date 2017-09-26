@@ -6,7 +6,11 @@ import RaisedButton from 'material-ui/RaisedButton';
 import DatePicker from 'material-ui/DatePicker';
 import TextField from 'material-ui/TextField';
 
-let AddImage = ({ dispatch }) => {
+import { getTranslate, getActiveLanguage } from 'react-localize-redux';
+
+//this must be refactored... extract components!!!!
+
+let AddImage = ({ dispatch, translate, currentLanguage }) => {
   let tag, description, date, location, src;
   let maxDate = new Date();
 
@@ -19,21 +23,26 @@ let AddImage = ({ dispatch }) => {
         }}
       >
         <TextField className="InputField" onChange={(e) => {tag = e.target.value}}
-            floatingLabelText="Tag" required />        
+            floatingLabelText={ translate('tag') } required />        
         <TextField className="InputField" onChange={(e) => {description = e.target.value}}
-            floatingLabelText="Description"  required />
+            floatingLabelText={ translate('description') }  required />
         <DatePicker className="InputField" maxDate={maxDate} onChange={(e, data) => {date = data}} 
-            floatingLabelText="Date" required />
+            floatingLabelText={ translate('date') } required />
         <TextField className="InputField" onChange={(e) => {location = e.target.value}}
-            floatingLabelText="Location" required />     
+            floatingLabelText={ translate('location') } required />     
         <TextField  className="InputField" onChange={(e) => {src = e.target.value}}
-            floatingLabelText="Image URL" required />               
-        <RaisedButton className="FormSubmitButton" type="submit" label="Add Image" icon={<CircleIcon  />} /> 
+            floatingLabelText={ translate('Image Url') } required />               
+        <RaisedButton className="FormSubmitButton" type="submit" label={ translate('add image')} icon={<CircleIcon  />} /> 
 
       </form>
     </div>
   )
 }
-AddImage = connect()(AddImage)
+const mapStateToProps = state => ({
+  translate: getTranslate(state.locale),
+  currentLanguage: getActiveLanguage(state.locale).code
+});
+
+AddImage = connect(mapStateToProps)(AddImage)
 
 export default AddImage

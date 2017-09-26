@@ -19,17 +19,8 @@ class Gallery extends React.Component {
 
     disclaimerText= "Due to some limitations of this component you can only add a link to the image you want to load. Drag and drop funtionality is on the way. Thanks for understanding";
 
-    handleChangeSingle = (event, value) => {
-        this.setState({
-            valueSingle: value,
-        });
-    };
-
-    
     handleToggle = () => this.setState({open: !this.state.open});
 
-    
-    // 
     render() {
         return (
             <div className="GalleryPage">
@@ -57,6 +48,6 @@ class Gallery extends React.Component {
 }
 Gallery.propTypes = {
     imageUrls: PropTypes.arrayOf(PropTypes.object),
-    onTodoClick: PropTypes.func.isRequired
+    onImageClick: PropTypes.func.isRequired
 };
 export default Gallery;
