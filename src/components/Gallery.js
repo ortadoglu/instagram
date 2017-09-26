@@ -2,19 +2,23 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import IconButton from 'material-ui/IconButton';
 import CircleIcon from 'material-ui/svg-icons/content/add-circle-outline';
+import UpwardsIcon from 'material-ui/svg-icons/communication/call-made';
 import InfoIcon from 'material-ui/svg-icons/action/info-outline';
 import ClearIcon from 'material-ui/svg-icons/content/clear';
 import PolaroidPic from './polaroidPic.js'
-
+import IconMenu from 'material-ui/IconMenu';
+import MenuItem from 'material-ui/MenuItem';
 import Drawer from 'material-ui/Drawer';
 import AddImage from '../containers/AddImage';
 import TagList from '../containers/Tags';
+
+import ReactSort from 'react-sort-component';
 
 
 class Gallery extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {open: false, valueSingle: '4'};
+        this.state = {open: false};
     }
 
     disclaimerText= "Due to some limitations of this component you can only add a link to the image you want to load. Drag and drop funtionality is on the way. Thanks for understanding";
@@ -25,13 +29,25 @@ class Gallery extends React.Component {
         return (
             <div className="GalleryPage">
                 <div className="Gallery">
-                    {this.props.imageUrls.map(details => 
-                        <PolaroidPic src={details.src} description={details.description} full={details} onClick={() => this.props.onImageClick(details.id)} />
-                        )}
-
+                    <ReactSort className="Gallery"
+                        dataSource = {this.props.imageUrls}
+                        sortOptions = {{ sortField: this.props.orderDiscriminant, sortDir: "asc" }} > 
+                            {(props) => <PolaroidPic 
+                                src={props.src} description={props.description} full={props} onClick={() => this.props.onImageClick(props.id)} />
+                            }
+                    </ReactSort>
                 </div>  
                 <div className="GalleryBar">
                     <IconButton tooltip="Add another picture" tooltipPosition="top-center" onClick={this.handleToggle}><CircleIcon /></IconButton>
+                    <IconMenu
+                        iconButtonElement={<IconButton tooltip="Sort by" tooltipPosition="top-center"><UpwardsIcon /></IconButton>}
+                        anchorOrigin={{horizontal: 'left', vertical: 'bottom'}}
+                        targetOrigin={{horizontal: 'left', vertical: 'bottom'}}
+                        >
+                        <MenuItem primaryText="Date" onClick={() => this.props.onDiscriminantClick("date")}/>
+                        <MenuItem primaryText="Location" onClick={() => this.props.onDiscriminantClick("location")}/>
+                        <MenuItem primaryText="Description" onClick={() => this.props.onDiscriminantClick("description")}/>
+                    </IconMenu>
                     <TagList />      
                 </div>
                 <Drawer className="AddImageDrawer" open={this.state.open} closeFunction={() => this.handleToggle()}>
@@ -48,6 +64,8 @@ class Gallery extends React.Component {
 }
 Gallery.propTypes = {
     imageUrls: PropTypes.arrayOf(PropTypes.object),
-    onImageClick: PropTypes.func.isRequired
+    orderDiscriminant: PropTypes.string,
+    onImageClick: PropTypes.func.isRequired,
+    onDiscriminantClick: PropTypes.func.isRequired,
 };
 export default Gallery;

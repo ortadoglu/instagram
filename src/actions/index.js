@@ -14,9 +14,9 @@ export const selectImage = id => {
   }
 }
 
-export const setImageFilter = filter => {
+export const setSortOrder = filter => {
   return {
-    type: 'SET_IMAGE_FILTER',
+    type: 'SET_SORT_ORDER',
     filter
   }
 }

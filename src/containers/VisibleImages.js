@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { selectImage } from '../actions'
+import { selectImage , setSortOrder} from '../actions'
 import Gallery from '../components/Gallery'
 
 const getVisibleImages = (images, filter) => {
@@ -13,7 +13,8 @@ const getVisibleImages = (images, filter) => {
 
 const mapStateToProps = state => {
   return {
-    imageUrls: getVisibleImages(state.images, state.visibilityFilter) // add real filter
+    imageUrls: getVisibleImages(state.images, state.visibilityFilter), // add real filter
+    orderDiscriminant: state.sortOrderDiscriminant
   }
 }
 
@@ -21,6 +22,9 @@ const mapDispatchToProps = dispatch => {
   return {
     onImageClick: id => {
       dispatch(selectImage(id))
+    },
+    onDiscriminantClick: id => {
+      dispatch(setSortOrder(id))
     }
   }
 }
