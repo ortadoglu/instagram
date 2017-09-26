@@ -1,11 +1,4 @@
-let nextTodoId = 0
-export const addTodo = text => {
-  return {
-    type: 'ADD_TODO',
-    id: nextTodoId++,
-    text
-  }
-}
+let nextId = 100;
 
 export const setVisibilityFilter = filter => {
   return {
@@ -14,28 +7,31 @@ export const setVisibilityFilter = filter => {
   }
 }
 
-export const toggleTodo = id => {
+export const selectImage = id => {
   return {
-    type: 'TOGGLE_TODO',
+    type: 'SELECT_IMAGE',
     id
   }
 }
 
-export const setImageFilter = filter => {
+export const setSortOrder = filter => {
   return {
-    type: 'SET_IMAGE_FILTER',
+    type: 'SET_SORT_ORDER',
     filter
   }
 }
 
-export const addImage = (tag, description, date, location, src ) => {
+export const addImage = (tag, description, date, location, src, selected, comments, rating ) => {
   return {
     type: 'ADD_IMAGE',
-    id: nextTodoId++,
+    id: nextId++,
     tag,
     description,
     date,
     location,
-    src
+    src,
+    selected,
+    comments,
+    rating
   }
 }
