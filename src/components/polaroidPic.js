@@ -31,7 +31,9 @@ class PolaroidPic extends React.Component {
                     <div className="description">
                         <div>Location: {this.props.full.location}</div>
                         <div>Tag: {this.props.full.tag}</div>
-                        <div>Rating: {this.props.full.rating}</div>
+                        <div class="rating">
+                            Rating: <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                        </div>
                         <div>Comments: </div>
                     </div>}
           </div>

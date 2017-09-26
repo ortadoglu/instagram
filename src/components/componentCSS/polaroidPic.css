@@ -18,6 +18,9 @@
 .polaroid .innerPolaroid {
     width: fit-content;
     height: fit-content;
+    -webkit-transform: rotate(2deg);
+    -moz-transform: rotate(2deg);
+    transform: rotate(2deg);
 }
  
 .polaroid p {
@@ -38,11 +41,7 @@
     position: relative;
 }
 
-.polaroid div {
-    -webkit-transform: rotate(2deg);
-    -moz-transform: rotate(2deg);
-    transform: rotate(2deg);
-}
+
 
 
 
@@ -67,4 +66,4 @@
     margin: 5px;
     margin-left:15px; margin-right: 15px;
 }
-    
+
