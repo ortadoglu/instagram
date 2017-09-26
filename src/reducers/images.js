@@ -9,8 +9,17 @@ const images = (state = preloads, action) => {
                     description: action.description,
                     date: action.date,
                     location: action.location,
-                    src: action.src
+                    src: action.src,
+                    selected: action.selected,
+                    comments: action.comments,
+                    rating: action.rating
                 }];
+        case 'SELECT_IMAGE':
+            return state.map(image =>
+                  (image.id === action.id) 
+                    ? {...image, selected: !image.selected}
+                    : image
+            )                
         default:
             return state;
     }
@@ -23,11 +32,14 @@ export default images
 const  preloads =[
         {
             id: 1,
-            tag: "branza",
+            tag: "earth",
             description: "earth picture",
             date: "",
             location: "Bratislava",
-            src: "https://cdn.thinglink.me/api/image/860951843818176512/1240/10/scaletowidth"
+            src: "https://cdn.thinglink.me/api/image/860951843818176512/1240/10/scaletowidth",
+            selected: false,
+            comments: [],
+            rating: 5,
         },
 
         {
@@ -36,7 +48,10 @@ const  preloads =[
             description: "despre michel",
             date: "",
             location: "Bratislava",
-            src: "http://www.mjworld.net/wp-content/uploads/man-in-the-mirror-michael-jackson-art-music.jpg"
+            src: "http://www.mjworld.net/wp-content/uploads/man-in-the-mirror-michael-jackson-art-music.jpg",
+            selected: false,
+            comments: [],
+            rating: 5,
         },
 
         {
@@ -45,16 +60,22 @@ const  preloads =[
             description: "o ciuperca",
             date: "",
             location: "Bratislava",
-            src: "https://cdn.pixabay.com/photo/2014/09/30/21/15/mushroom-467553__340.jpg"
+            src: "https://cdn.pixabay.com/photo/2014/09/30/21/15/mushroom-467553__340.jpg",
+            selected: false,
+            comments: [],
+            rating: 5,
         },
 
         {
             id: 4,
-            tag: "branza",
+            tag: "earth",
             description: "valuri",
             date: "",
             location: "Bratislava",
-            src: "https://newheavenonearth.files.wordpress.com/2012/06/ocean-waves.jpg"
+            src: "https://newheavenonearth.files.wordpress.com/2012/06/ocean-waves.jpg",
+            selected: false,
+            comments: [],
+            rating: 5,
         },
 
         {
@@ -63,43 +84,58 @@ const  preloads =[
             description: "paris",
             date: "",
             location: "Bratislava",
-            src: "https://www.w3schools.com/bootstrap/paris.jpg"
+            src: "https://www.w3schools.com/bootstrap/paris.jpg",
+            selected: false,
+            comments: [],
+            rating: 5,
         },
 
         {
             id: 6,
-            tag: "michel",
+            tag: "earth",
             description: "pamant",
             date: "",
             location: "Bratislava",
-            src: "https://cdn.thinglink.me/api/image/860951843818176512/1240/10/scaletowidth"
+            src: "https://cdn.thinglink.me/api/image/860951843818176512/1240/10/scaletowidth",
+            selected: false,
+            comments: [],
+            rating: 5,
         },
 
         {
             id: 7,
-            tag: "branza",
+            tag: "o ciuperca",
             description: "alta ciuperca",
             date: "",
             location: "Bratislava",
-            src: "https://cdn.pixabay.com/photo/2014/09/30/21/15/mushroom-467553__340.jpg"
+            src: "https://cdn.pixabay.com/photo/2014/09/30/21/15/mushroom-467553__340.jpg",
+            selected: false,
+            comments: [],
+            rating: 5,
         },
 
         {
             id: 8,
-            tag: "branza",
+            tag: "earth",
             description: "viezure",
             date: "",
             location: "",
-            src: "https://camo.mybb.com/e01de90be6012adc1b1701dba899491a9348ae79/687474703a2f2f7777772e6a71756572797363726970742e6e65742f696d616765732f53696d706c6573742d526573706f6e736976652d6a51756572792d496d6167652d4c69676874626f782d506c7567696e2d73696d706c652d6c69676874626f782e6a7067"
+            src: "https://camo.mybb.com/e01de90be6012adc1b1701dba899491a9348ae79/687474703a2f2f7777772e6a71756572797363726970742e6e65742f696d616765732f53696d706c6573742d526573706f6e736976652d6a51756572792d496d6167652d4c69676874626f782d506c7567696e2d73696d706c652d6c69676874626f782e6a7067",
+            selected: false,
+            comments: [],
+            rating: 5,
         },
 
         {
             id: 9,
-            tag: "branza",
+            tag: "buildings",
             description: "paris toamna",
             date: "",
             location: "Bratislava",
-            src: "https://www.w3schools.com/bootstrap/paris.jpg"
+            src: "https://www.w3schools.com/bootstrap/paris.jpg",
+            selected: false,
+            comments: [],
+            rating: 5,
         },
 
         {
@@ -108,25 +144,34 @@ const  preloads =[
             description: "despre michel",
             date: "",
             location: "",
-            src: "http://www.mjworld.net/wp-content/uploads/man-in-the-mirror-michael-jackson-art-music.jpg"
+            src: "http://www.mjworld.net/wp-content/uploads/man-in-the-mirror-michael-jackson-art-music.jpg",
+            selected: false,
+            comments: [],
+            rating: 5,
         },
 
         {
             id: 11,
-            tag: "branza",
+            tag: "earth",
             description: "despre branza",
             date: "",
             location: "",
-            src: "https://camo.mybb.com/e01de90be6012adc1b1701dba899491a9348ae79/687474703a2f2f7777772e6a71756572797363726970742e6e65742f696d616765732f53696d706c6573742d526573706f6e736976652d6a51756572792d496d6167652d4c69676874626f782d506c7567696e2d73696d706c652d6c69676874626f782e6a7067"
+            src: "https://camo.mybb.com/e01de90be6012adc1b1701dba899491a9348ae79/687474703a2f2f7777772e6a71756572797363726970742e6e65742f696d616765732f53696d706c6573742d526573706f6e736976652d6a51756572792d496d6167652d4c69676874626f782d506c7567696e2d73696d706c652d6c69676874626f782e6a7067",
+            selected: false,
+            comments: [],
+            rating: 5,
         },
 
         {
             id: 12,
-            tag: "branza",
+            tag: "earth",
             description: "multe valuri",
             date: "",
             location: "",
-            src: "https://newheavenonearth.files.wordpress.com/2012/06/ocean-waves.jpg"
+            src: "https://newheavenonearth.files.wordpress.com/2012/06/ocean-waves.jpg",
+            selected: false,
+            comments: [],
+            rating: 5,
         },
 
         {
@@ -135,7 +180,10 @@ const  preloads =[
             description: "despre branza",
             date: "",
             location: "",
-            src: "https://www.w3schools.com/bootstrap/paris.jpg"
+            src: "https://www.w3schools.com/bootstrap/paris.jpg",
+            selected: false,
+            comments: [],
+            rating: 5,
         },
 
         {
@@ -144,16 +192,22 @@ const  preloads =[
             description: "despre michel",
             date: "",
             location: "",
-            src: "http://www.mjworld.net/wp-content/uploads/man-in-the-mirror-michael-jackson-art-music.jpg"
+            src: "http://www.mjworld.net/wp-content/uploads/man-in-the-mirror-michael-jackson-art-music.jpg",
+            selected: false,
+            comments: [],
+            rating: 5,
         },
 
         {
             id: 15,
-            tag: "branza",
-            description: "despre branza",
+            tag: "o ciuperca",
+            description: "despre ciuperci",
             date: "",
             location: "",
-            src: "https://cdn.pixabay.com/photo/2014/09/30/21/15/mushroom-467553__340.jpg"
+            src: "https://cdn.pixabay.com/photo/2014/09/30/21/15/mushroom-467553__340.jpg",
+            selected: false,
+            comments: [],
+            rating: 5,
         },
 
         {
@@ -162,6 +216,9 @@ const  preloads =[
             description: "valuri",
             date: "",
             location: "",
-            src: "https://newheavenonearth.files.wordpress.com/2012/06/ocean-waves.jpg"
+            src: "https://newheavenonearth.files.wordpress.com/2012/06/ocean-waves.jpg",
+            selected: false,
+            comments: [],
+            rating: 5,
         },
     ];

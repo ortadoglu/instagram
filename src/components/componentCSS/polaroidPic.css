@@ -2,8 +2,6 @@
     height: 300px;
     width: 380px;
     margin: 35px;
-    display: flex;
-    justify-content: center;
 }
  
 .polaroid img {
@@ -46,8 +44,27 @@
     transform: rotate(2deg);
 }
 
-.polaroid div:nth-child(2n) {
+
+
+.polaroid .description {
+    position: relative;
+    float: right;
+    width: 200px;
+    height: 150px;
+    background-color: #eae672;
+    border-radius: 8px;
+    padding: 0px;
+    top: -150px;
+    left: 50px;
+    box-shadow: 0 10px 10px 2px rgba(0,0,0,0.3);
+    font: 400 14px/1 'Kaushan Script', cursive;
     -webkit-transform: rotate(-12deg);
     -moz-transform: rotate(-12deg);
     transform: rotate(-12deg);
 }
+
+.description div {
+    margin: 5px;
+    margin-left:15px; margin-right: 15px;
+}
+    

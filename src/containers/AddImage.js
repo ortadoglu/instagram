@@ -15,7 +15,7 @@ let AddImage = ({ dispatch }) => {
       <form
         onSubmit={e => {
           e.preventDefault()
-          dispatch(addImage(tag, description, date, location, src))
+          dispatch(addImage(tag, description, date, location, src, false, [], 5))
         }}
       >
         <TextField className="InputField" onChange={(e) => {tag = e.target.value}}

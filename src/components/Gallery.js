@@ -35,7 +35,7 @@ class Gallery extends React.Component {
             <div className="GalleryPage">
                 <div className="Gallery">
                     {this.props.imageUrls.map(details => 
-                        <PolaroidPic src={details.src} description={details.description} />
+                        <PolaroidPic src={details.src} description={details.description} full={details} onClick={() => this.props.onImageClick(details.id)} />
                         )}
 
                 </div>  
@@ -57,5 +57,6 @@ class Gallery extends React.Component {
 }
 Gallery.propTypes = {
     imageUrls: PropTypes.arrayOf(PropTypes.object),
+    onTodoClick: PropTypes.func.isRequired
 };
 export default Gallery;

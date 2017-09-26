@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import MenuItem from 'material-ui/MenuItem';
 import ContentFilter from 'material-ui/svg-icons/content/filter-list';
 import IconMenu from 'material-ui/IconMenu';
 import IconButton from 'material-ui/IconButton';
+import FilterMenuItemContainer from '../containers/FilterMenuItemContainer';
 
 class TagList extends React.Component {
     constructor(props) {
@@ -25,9 +25,9 @@ class TagList extends React.Component {
                 value={this.state.value}
                 multiple={false}
                 >
-                <MenuItem key="nofilter" value="1" primaryText="No filter" />
+                <FilterMenuItemContainer key="nofilter" value="1" tag="No filter" primaryText="No filter" />
                 {this.props.tags.map(tag => (
-                    <MenuItem key={tag} primaryText={tag} value={tag} />
+                    <FilterMenuItemContainer tag={tag}/>
                 ))}
 
             </IconMenu>  
@@ -40,3 +40,6 @@ TagList.propTypes = {
     onClick: PropTypes.func.isRequired
 };
 export default TagList
+
+
+//<MenuItem key={tag} primaryText={tag} value={tag} />

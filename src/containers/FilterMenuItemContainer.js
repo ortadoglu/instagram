@@ -1,24 +1,24 @@
 import { connect } from 'react-redux'
 import { setVisibilityFilter } from '../actions'
-import Link from '../components/Link'
+import FilterMenuItem from '../components/FilterMenuItem'
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    active: ownProps.filter === state.visibilityFilter
+    active: true
   }
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     onClick: () => {
-      dispatch(setVisibilityFilter(ownProps.filter))
+      dispatch(setVisibilityFilter(ownProps.tag))
     }
   }
 }
 
-const FilterLink = connect(
+const FilterMenuItemContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(Link)
+)(FilterMenuItem)
 
-export default FilterLink
+export default FilterMenuItemContainer
