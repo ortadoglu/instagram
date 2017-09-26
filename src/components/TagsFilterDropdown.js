@@ -15,6 +15,7 @@ class TagList extends React.Component {
         this.setState({
             value: value,
         });
+   
     };
 
     render() {
@@ -27,7 +28,7 @@ class TagList extends React.Component {
                 >
                 <FilterMenuItemContainer key="nofilter" value="1" tag="No filter" primaryText="No filter" />
                 {this.props.tags.map(tag => (
-                    <FilterMenuItemContainer tag={tag}/>
+                    <FilterMenuItemContainer key={tag} tag={tag}/>
                 ))}
 
             </IconMenu>  
@@ -40,6 +41,3 @@ TagList.propTypes = {
     onClick: PropTypes.func.isRequired
 };
 export default TagList
-
-
-//<MenuItem key={tag} primaryText={tag} value={tag} />
