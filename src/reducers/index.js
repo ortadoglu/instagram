@@ -1,12 +1,13 @@
 import { combineReducers } from 'redux';
-import todos from './todos';
 import images from './images';
-import visibilityFilter from './visibilityFilter';
+import { visibilityFilter , sortOrderDiscriminant} from './filters';
+import { localeReducer } from 'react-localize-redux';
 
-const todoApp = combineReducers({
-    todos,
+const galleryApp = combineReducers({
     visibilityFilter,
-    images
+    sortOrderDiscriminant,
+    images,
+    locale: localeReducer
 })
 
-export default todoApp
+export default galleryApp

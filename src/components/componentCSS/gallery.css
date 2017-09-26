@@ -9,15 +9,21 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: #E8EEE6;
+    background-color: #efeff1;
     flex: 1;
     overflow: auto;
+}
+
+.Gallery > div:first-of-type { 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
 }
 
 .GalleryBar {
     height: 50px;
     width: 100%;
-    background-color: #E8EEE6;
+    background-color: #efeff1;
     display:flex;
     justify-content: space-around;
     border-top: solid 1px lightgray;
@@ -57,5 +63,25 @@
 .CloseDrawerButton {
     padding-top: 10px;
     width: 100% !important;
-    height: 90px !important;
+    height: 40px !important;
+}
+
+.OneTooMany {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.Header {
+    height: 50px;
+    width: 100%;
+    margin: 0px;
+    background-color: #efeff1;
+    border-bottom: solid 1px lightgray;
+    
+}
+
+.Header .Dropdown {
+    position: fixed !important;
+    right: 0;
 }

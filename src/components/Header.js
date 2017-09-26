@@ -1,23 +1,16 @@
-import React from 'react'
-import FilterLink from '../containers/FilterLink'
-import './componentCSS/header.css'
+import React from 'react';
+import { localize } from 'react-localize-redux';
 
-const Footer = () => (
-  <p>
-    Show:
-    {' '}
-    <FilterLink filter="SHOW_ALL">
-      All
-    </FilterLink>
-    {', '}
-    <FilterLink filter="SHOW_ACTIVE">
-      Active
-    </FilterLink>
-    {', '}
-    <FilterLink filter="SHOW_COMPLETED">
-      Completed
-    </FilterLink>
-  </p>
-)
+import LanguageSelector from '../containers/LanguageSelector';
 
-export default Footer
+
+class Header extends React.Component {
+    render() {
+        return (
+        <div className="Header">
+            <LanguageSelector/>
+        </div>
+    );}
+}
+
+export default localize(Header, 'locale');
