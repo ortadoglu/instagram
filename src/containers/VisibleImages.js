@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { selectImage , setSortOrder} from '../actions'
-import GalleryPage from '../components/GalleryPage'
+import GalleryPage from '../components/GalleryPage/GalleryPage'
 
 import { getTranslate } from 'react-localize-redux';
 

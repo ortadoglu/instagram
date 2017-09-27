@@ -5,7 +5,7 @@ import CircleIcon from 'material-ui/svg-icons/content/add-circle-outline';
 import UpwardsIcon from 'material-ui/svg-icons/communication/call-made';
 import IconMenu from 'material-ui/IconMenu';
 import MenuItem from 'material-ui/MenuItem';
-import TagList from '../containers/Tags';
+import TagList from '../../containers/Tags';
 
 class GalleryBar extends React.Component {
     render() {

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import InfoIcon from 'material-ui/svg-icons/action/info-outline';
 import Drawer from 'material-ui/Drawer';
-import AddImage from '../containers/AddImage';
+import AddImage from '../../containers/AddImage';
 
 class GalleryDrawer extends React.Component {
     render() {
