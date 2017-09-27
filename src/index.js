@@ -6,7 +6,6 @@ import galleryApp from './reducers';
 import App from './components/App';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import './index.css'
-
 import { initialize, addTranslation } from 'react-localize-redux';
 import texts from './languageFiles/global.json';
 
