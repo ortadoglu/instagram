@@ -5,9 +5,10 @@
     "date": ["Date", "Datum", "Data"],  
     "Image_Url": ["Image URL", "Bild Url", "Url imagine"],
     "add_image": ["ADD IMAGE", "HINZUFÜGEN", "ADAUGA"],
-    "DISCLAIMER": ["This tab doesnt close so you can watch language switching",
-        "Diese Registerkarte schließt nicht so, dass Sie die Sprache wechseln",
-        "Fereasta nu se inchide pentru a putea vedea schimbarea limbii"],
+    "DISCLAIMER": ["This tab doesnt close so you can watch language changes. It can be closed from the + button in the gallery footer",
+        "Diese Registerkarte schließt nicht so, dass Sie die Sprache wechseln. Es kann von der + Taste in der Galerie geschlossen werden ",
+        "Fereasta nu se inchide pentru a putea vedea schimbarea limbii. Se poate inchide de la plusul din bara de jos a galeriei foto"],
     "add_new_image": ["Add another image", "Neues Bild hinzufügen", "Adauga poza noua"],
-    "select_filter": ["Sort by", "Sortiere nach", "Sorteaza dupa"]
+    "select_filter": ["Sort by", "Sortiere nach", "Sorteaza dupa"],
+    "login": ["Login", "Login", "Autentificare"]
 }

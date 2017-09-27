@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types'
-import './componentCSS/polaroidPic.css';
 
 class PolaroidPic extends React.Component {
     constructor (){
@@ -36,14 +35,13 @@ class PolaroidPic extends React.Component {
                         </div>
                         <div>Comments: </div>
                     </div>}
-          </div>
+            </div>
         );
     }
 }
 
 PolaroidPic.propTypes = {
     onClick: PropTypes.func.isRequired,
-
 }
 
 export default PolaroidPic;

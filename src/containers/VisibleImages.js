@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { selectImage , setSortOrder} from '../actions'
-import Gallery from '../components/Gallery'
+import GalleryPage from '../components/GalleryPage/GalleryPage'
 
 import { getTranslate } from 'react-localize-redux';
 
@@ -23,18 +23,14 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onImageClick: id => {
-        dispatch(selectImage(id))
-        },
-        onDiscriminantClick: id => {
-        dispatch(setSortOrder(id))
-        }
+        onImageClick: id => { dispatch(selectImage(id)) },
+        onDiscriminantClick: id => { dispatch(setSortOrder(id)) }
     }
 }
 
 const VisibleImages = connect(
     mapStateToProps,
     mapDispatchToProps
-)(Gallery)
+)(GalleryPage)
 
 export default VisibleImages

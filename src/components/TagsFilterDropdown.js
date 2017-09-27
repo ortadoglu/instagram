@@ -20,11 +20,9 @@ class TagList extends React.Component {
 
     render() {
         return (
-            <IconMenu 
-                iconButtonElement={<IconButton><ContentFilter /></IconButton>}
+            <IconMenu iconButtonElement={<IconButton><ContentFilter /></IconButton>}
                 onChange={this.handleChangeSingle}
-                value={this.state.value}
-                multiple={false}
+                value={this.state.value} 
                 >
                 <FilterMenuItemContainer key="nofilter" value="1" tag="No filter" primaryText="No filter" />
                 {this.props.tags.map(tag => (
@@ -32,12 +30,13 @@ class TagList extends React.Component {
                 ))}
 
             </IconMenu>  
-
-    );}
+        );
+    }
 }
 
 TagList.propTypes = {
     tags: PropTypes.arrayOf(PropTypes.string),
     onClick: PropTypes.func.isRequired
 };
+
 export default TagList
