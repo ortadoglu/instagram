@@ -8,7 +8,6 @@ const App = () => (
         <Header />
         <VisibleImages />
     </div>
-
 )
 
 export default App

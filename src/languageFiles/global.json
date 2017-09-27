@@ -7,5 +7,7 @@
     "add image": ["ADD IMAGE", "HINZUFÜGEN", "ADAUGA"],
     "DISCLAIMER": ["This tab doesnt close so you cand watch language switching",
         "Diese Registerkarte schließt nicht so, dass Sie die Sprache wechseln",
-        "Fereasta nu se inchide pentru a putea vedea schimbarea limbii"]
- }
+        "Fereasta nu se inchide pentru a putea vedea schimbarea limbii"],
+    "add new image": ["Add another image", "Neues Bild hinzufügen", "Adauga poza noua"],
+    "select filter": ["Sort by", "Sortiere nach", "Sorteaza dupa"]
+}

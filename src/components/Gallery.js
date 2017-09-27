@@ -38,9 +38,9 @@ class Gallery extends React.Component {
                     </ReactSort>
                 </div>  
                 <div className="GalleryBar">
-                    <IconButton tooltip="Add another picture" tooltipPosition="top-center" onClick={this.handleToggle}><CircleIcon /></IconButton>
+                    <IconButton tooltip={ this.props.translate('add new image') } tooltipPosition="top-center" onClick={this.handleToggle}><CircleIcon /></IconButton>
                     <IconMenu
-                        iconButtonElement={<IconButton tooltip="Sort by" tooltipPosition="top-center"><UpwardsIcon /></IconButton>}
+                        iconButtonElement={<IconButton tooltip={ this.props.translate('select filter') } tooltipPosition="top-center"><UpwardsIcon /></IconButton>}
                         anchorOrigin={{horizontal: 'left', vertical: 'bottom'}}
                         targetOrigin={{horizontal: 'left', vertical: 'bottom'}}
                         >
@@ -54,7 +54,7 @@ class Gallery extends React.Component {
                     <AddImage />
                     <div className="DisclaimerText">
                         <InfoIcon className="DisclaimerIcon"/> 
-                        <div>{this.disclaimerText} </div>
+                        <div>{ this.props.translate('DISCLAIMER') } </div>
                     </div>
                     <ClearIcon className="CloseDrawerButton" onClick={()=>this.handleToggle()} />
                 </Drawer>
@@ -67,5 +67,6 @@ Gallery.propTypes = {
     orderDiscriminant: PropTypes.string,
     onImageClick: PropTypes.func.isRequired,
     onDiscriminantClick: PropTypes.func.isRequired,
+    translate: PropTypes.object
 };
 export default Gallery;
