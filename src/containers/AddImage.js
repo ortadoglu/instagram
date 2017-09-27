@@ -39,7 +39,7 @@ let AddImage = ({ dispatch, translate, currentLanguage }) => {
   )
 }
 const mapStateToProps = state => ({
-  translate: getTranslate(state.locale)
+    translate: getTranslate(state.locale)
 });
 
 AddImage = connect(mapStateToProps)(AddImage)

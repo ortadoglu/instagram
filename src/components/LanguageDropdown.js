@@ -16,14 +16,12 @@ class LanguageSelector extends React.Component {
 render() {
     return (
         <DropDownMenu className="Dropdown" value={this.state.value} onChange={this.handleChange}>
-   { this.props.languages.map(language => 
-       <MenuItem key={language.code} value={language.code} primaryText={language.code} 
-            onClick={() => this.props.onLanguageClick(language.code)}
-        />
-   )}
-     </DropDownMenu>
-
-      );}
+            { this.props.languages.map(language => 
+                <MenuItem key={language.code} value={language.code} primaryText={language.code} 
+                    onClick={() => this.props.onLanguageClick(language.code)} />
+            )}
+        </DropDownMenu>
+    );}
 }
 
 LanguageSelector.propTypes = {
