@@ -38,9 +38,9 @@ class Gallery extends React.Component {
                     </ReactSort>
                 </div>  
                 <div className="GalleryBar">
-                    <IconButton tooltip={ this.props.translate('add new image') } tooltipPosition="top-center" onClick={this.handleToggle}><CircleIcon /></IconButton>
+                    <IconButton tooltip={ this.props.translate('add_new_image') } tooltipPosition="top-center" onClick={this.handleToggle}><CircleIcon /></IconButton>
                     <IconMenu
-                        iconButtonElement={<IconButton tooltip={ this.props.translate('select filter') } tooltipPosition="top-center"><UpwardsIcon /></IconButton>}
+                        iconButtonElement={<IconButton tooltip={ this.props.translate('select_filter') } tooltipPosition="top-center"><UpwardsIcon /></IconButton>}
                         anchorOrigin={{horizontal: 'left', vertical: 'bottom'}}
                         targetOrigin={{horizontal: 'left', vertical: 'bottom'}}
                         >

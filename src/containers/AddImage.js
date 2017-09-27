@@ -31,8 +31,8 @@ let AddImage = ({ dispatch, translate, currentLanguage }) => {
             <TextField className="InputField" onChange={(e) => {location = e.target.value}}
                 floatingLabelText={ translate('location') } required />     
             <TextField  className="InputField" onChange={(e) => {src = e.target.value}}
-                floatingLabelText={ translate('Image Url') } required />               
-            <RaisedButton className="FormSubmitButton" type="submit" label={ translate('add image')} icon={<CircleIcon  />} /> 
+                floatingLabelText={ translate('Image_Url') } required />               
+            <RaisedButton className="FormSubmitButton" type="submit" label={ translate('add_image')} icon={<CircleIcon  />} /> 
 
         </form>
     </div>
