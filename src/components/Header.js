@@ -38,7 +38,7 @@ class Header extends React.Component {
     render() {
         return (
         <div className="Header">
-            <IconButton tooltip={ this.props.translate('add_new_image') } tooltipPosition="bottom-right" onClick={this.auth}><CircleIcon /></IconButton>
+            <IconButton tooltip={ this.props.translate('login') } tooltipPosition="bottom-right" onClick={this.auth}><CircleIcon /></IconButton>
             <LanguageSelector/>
         </div>
     );}
