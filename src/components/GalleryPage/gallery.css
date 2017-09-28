@@ -78,6 +78,7 @@
     margin: 0px;
     background-color: #efeff1;
     border-bottom: solid 1px lightgray;
+    display: flex;
     
 }
 

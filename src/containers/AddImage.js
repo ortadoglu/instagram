@@ -10,7 +10,7 @@ import { getTranslate } from 'react-localize-redux';
 
 //this must be refactored... extract components!!!!
 
-let AddImage = ({ dispatch, translate, currentLanguage }) => {
+let AddImage = ({ dispatch, translate }) => {
   let tag, description, date, location, src;
   let maxDate = new Date();
 

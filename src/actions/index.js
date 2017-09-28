@@ -35,3 +35,10 @@ export const addImage = (tag, description, date, location, src, selected, commen
         rating
     }
 }
+
+export const setLogin = state => {
+    return {
+        type: 'SET_LOGIN',
+        state
+    }
+}
