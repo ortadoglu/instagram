@@ -27,8 +27,6 @@ const images = (state = preloads, action) => {
   
 export default images
 
-
-
 const  preloads =[
         {
             id: 1,

@@ -2,13 +2,13 @@ import React from 'react';
 import { localize } from 'react-localize-redux';
 
 import LanguageSelector from '../containers/LanguageSelector';
-import LoginButton from '../containers/LimitedFunctionality'
+import LoginContainer from '../containers/LoginButtonContainer'
 
 class Header extends React.Component {
     render() {
         return (
         <div className="Header">
-            <LoginButton/>
+            <LoginContainer/>
             <LanguageSelector/>
         </div>
     );}

@@ -21,7 +21,7 @@ class GalleryPage extends React.Component {
                 <div className="Gallery">
                     <SortedGallery imageUrls={this.props.imageUrls} orderDiscriminant={this.props.orderDiscriminant} onImageClick={this.props.onImageClick}/>
                 </div>  
-                <GalleryBar onDiscriminantClick={this.props.onDiscriminantClick} translate={this.props.translate} onButtonClick={this.handleToggle}/>
+                <GalleryBar onDiscriminantClick={this.props.onDiscriminantClick} translate={this.props.translate} onButtonClick={this.handleToggle} loggedIn={this.props.loggedIn}/>
                 <GalleryDrawer translate={this.props.translate} state={this.state.drawerOpen} />
             </div>      
         );
