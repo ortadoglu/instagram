@@ -10,5 +10,6 @@
         "Fereasta nu se inchide pentru a putea vedea schimbarea limbii. Se poate inchide de la plusul din bara de jos a galeriei foto"],
     "add_new_image": ["Add another image", "Neues Bild hinzufügen", "Adauga poza noua"],
     "select_filter": ["Sort by", "Sortiere nach", "Sorteaza dupa"],
-    "login": ["Login", "Login", "Autentificare"]
+    "login": ["Login", "Login", "Autentificare"],
+    "logoff": ["Logoff", "Logoff", "Delogare"]
 }

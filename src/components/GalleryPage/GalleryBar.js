@@ -11,7 +11,8 @@ class GalleryBar extends React.Component {
     render() {
         return (
             <div className="GalleryBar">
-            <IconButton tooltip={ this.props.translate('add_new_image') } tooltipPosition="top-center" onClick={this.props.onButtonClick}><CircleIcon /></IconButton>
+             { (this.props.loggedIn !== 'Logged Off') &&
+            <IconButton tooltip={ this.props.translate('add_new_image') } tooltipPosition="top-center" onClick={this.props.onButtonClick}><CircleIcon /></IconButton> }
             <IconMenu
                 iconButtonElement={<IconButton tooltip={ this.props.translate('select_filter') } tooltipPosition="top-center"><UpwardsIcon /></IconButton>}
                 anchorOrigin={{horizontal: 'left', vertical: 'bottom'}}

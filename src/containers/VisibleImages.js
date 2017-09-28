@@ -15,8 +15,9 @@ const getVisibleImages = (images, filter) => {
 
 const mapStateToProps = state => {
     return {
-        imageUrls: getVisibleImages(state.images, state.visibilityFilter), // add real filter
+        imageUrls: getVisibleImages(state.images, state.visibilityFilter), //split this into more containers!!!!
         orderDiscriminant: state.sortOrderDiscriminant,
+        loggedIn: state.loginState,
         translate: getTranslate(state.locale)
     }
 }
